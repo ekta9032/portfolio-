@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Cpu, Layout, Server, Database, Wrench, Code2 } from 'lucide-react';
+import { Cpu, Layout, Server, Database, Wrench, Code2, CheckCircle2 } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 export default function Skills() {
@@ -11,7 +11,7 @@ export default function Skills() {
     { id: 'frontend', label: 'Frontend', icon: Layout },
     { id: 'backend', label: 'Backend', icon: Server },
     { id: 'database', label: 'Databases', icon: Database },
-    { id: 'tools', label: 'Tools', icon: Wrench },
+    { id: 'tools', label: 'Tools & Concepts', icon: Wrench },
   ];
 
   return (
@@ -27,7 +27,7 @@ export default function Skills() {
             Skills & Core <span className="font-serif italic font-normal text-white">Technologies</span>
           </h2>
           <p className="text-muted text-sm sm:text-base mt-4 leading-relaxed">
-            Hands-on expertise across full-stack JavaScript development, responsive user interfaces, and database management.
+            Hands-on expertise across full-stack JavaScript development, responsive user interfaces, RESTful APIs, and SDLC.
           </p>
         </div>
 
@@ -66,7 +66,7 @@ export default function Skills() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-white text-base">Frontend</h3>
-                    <p className="text-xs text-muted">Client Interfaces</p>
+                    <p className="text-xs text-muted">React.js & Responsive Web Design</p>
                   </div>
                 </div>
                 <span className="text-xs font-mono px-2.5 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20">
@@ -103,7 +103,7 @@ export default function Skills() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-white text-base">Backend & APIs</h3>
-                    <p className="text-xs text-muted">Server & Logic</p>
+                    <p className="text-xs text-muted">Node.js, Express.js & REST APIs</p>
                   </div>
                 </div>
                 <span className="text-xs font-mono px-2.5 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20">
@@ -140,7 +140,7 @@ export default function Skills() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-white text-base">Databases</h3>
-                    <p className="text-xs text-muted">Data & Schemas</p>
+                    <p className="text-xs text-muted">MongoDB, Mongoose & SQL</p>
                   </div>
                 </div>
                 <span className="text-xs font-mono px-2.5 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20">
@@ -169,33 +169,45 @@ export default function Skills() {
 
           {/* Tools & Workflow */}
           {(activeTab === 'all' || activeTab === 'tools') && (
-            <div className="glass p-7 rounded-3xl border border-border hover:border-primary/40 transition-all duration-300 hover:-translate-y-1 md:col-span-2 lg:col-span-3">
-              <div className="flex items-center justify-between pb-4 border-b border-border mb-6">
+            <div className="glass p-7 rounded-3xl border border-border hover:border-primary/40 transition-all duration-300 hover:-translate-y-1 md:col-span-2 lg:col-span-3 space-y-6">
+              <div className="flex items-center justify-between pb-4 border-b border-border">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
                     <Wrench className="w-5 h-5" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-white text-base">Development Tools & Concepts</h3>
-                    <p className="text-xs text-muted">Workflow, Version Control & Systems</p>
+                    <h3 className="font-semibold text-white text-base">Tools & Core Concepts</h3>
+                    <p className="text-xs text-muted">Version Control, Testing, Architecture & SDLC</p>
                   </div>
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                {skills.tools.map((tool, idx) => (
-                  <div key={idx} className="p-4 rounded-2xl glass-strong border border-border/80 text-center">
-                    <div className="text-sm font-semibold text-white">{tool.name}</div>
-                    <div className="text-xs text-primary font-mono mt-1">{tool.highlight}</div>
-                  </div>
-                ))}
-                {skills.concepts.slice(0, 4).map((concept, idx) => (
-                  <div key={`c-${idx}`} className="p-4 rounded-2xl glass-strong border border-border/80 text-center">
-                    <div className="text-xs sm:text-sm font-medium text-white">{concept}</div>
-                    <div className="text-[11px] text-muted font-mono mt-1">Core Architecture</div>
-                  </div>
-                ))}
+              {/* Tools row */}
+              <div>
+                <h4 className="text-xs uppercase tracking-wider font-semibold text-primary mb-3">Development Tools</h4>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                  {skills.tools.map((tool, idx) => (
+                    <div key={idx} className="p-4 rounded-2xl glass-strong border border-border/80 text-center">
+                      <div className="text-sm font-semibold text-white">{tool.name}</div>
+                      <div className="text-xs text-primary font-mono mt-1">{tool.highlight}</div>
+                    </div>
+                  ))}
+                </div>
               </div>
+
+              {/* Concepts row from new resume */}
+              <div className="pt-2">
+                <h4 className="text-xs uppercase tracking-wider font-semibold text-primary mb-3">Engineering Concepts & Architecture</h4>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                  {skills.concepts.map((concept, idx) => (
+                    <div key={idx} className="p-3.5 rounded-xl glass-strong border border-border/80 flex items-center gap-2.5">
+                      <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
+                      <span className="text-xs sm:text-sm font-medium text-white">{concept}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
             </div>
           )}
 

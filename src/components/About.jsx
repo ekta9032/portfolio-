@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layers, Cpu, Database, Code2, Sparkles, CheckCircle2 } from 'lucide-react';
+import { Layers, Cpu, Database, Code2 } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 export default function About() {
@@ -9,22 +9,22 @@ export default function About() {
     {
       icon: Layers,
       title: "MERN Stack Development",
-      description: "Building scalable full-stack web applications using React.js, Node.js, Express.js, and MongoDB."
+      description: "Building responsive, scalable web applications using React.js, Node.js, Express.js, and MongoDB."
     },
     {
       icon: Cpu,
-      title: "Modern Web Technologies",
-      description: "Creating responsive, component-driven interfaces with Tailwind CSS, REST APIs, and state management."
+      title: "Modern Web Engineering",
+      description: "Developing component-based architectures with React Hooks, Context API, RESTful APIs, and Tailwind CSS."
     },
     {
       icon: Database,
-      title: "Database & Data Modeling",
-      description: "Designing robust schemas with MongoDB and Mongoose ODM, alongside relational SQL foundations."
+      title: "Databases & CRUD APIs",
+      description: "Designing schemas and persistent data models with MongoDB, Mongoose ODM, and relational SQL foundations."
     },
     {
       icon: Code2,
-      title: "Problem Solving & DSA",
-      description: "Applying Data Structures & Algorithms and structured thinking to build efficient, maintainable software."
+      title: "SDLC & Problem Solving",
+      description: "Applying Data Structures, Algorithms, SDLC workflows, Git/GitHub version control, and Postman testing."
     }
   ];
 
@@ -52,13 +52,16 @@ export default function About() {
 
             <div className="space-y-4 text-muted text-sm sm:text-base leading-relaxed animate-fade-in">
               <p>
-                I'm <strong className="text-white font-medium">{personal.name}</strong>, an MCA graduate from <strong className="text-white font-medium">Pranveer Singh Institute of Technology (PSIT), Kanpur</strong> and a MERN Stack Developer trained at <strong className="text-white font-medium">QSpiders Noida</strong>. I enjoy crafting full-stack web applications that are scalable, responsive, and engineered with clean architecture.
+                I'm <strong className="text-white font-medium">{personal.name}</strong>, an MCA graduate from <strong className="text-white font-medium">Pranveer Singh Institute of Technology (PSIT), Kanpur</strong> and a Full Stack Developer with internship experience in software development and MERN Stack technologies.
               </p>
               <p>
-                My hands-on experience includes developing a full-stack <strong className="text-white font-medium">Task Management Application</strong> with complete CRUD functionality and RESTful API endpoints, as well as a dynamic <strong className="text-white font-medium">Food Delivery System</strong> built with React.js and modern state management.
+                Currently, I am a <strong className="text-white font-medium">Junior Software Developer Intern at Codenia Technologies LLP</strong>, where I contribute to software and application development activities, apply modern programming concepts, and collaborate on development tasks to solve technical problems.
               </p>
               <p>
-                I am continuously refining my skills in React, Node.js, Express.js, MongoDB, and Data Structures & Algorithms. I love solving real-world challenges through well-structured, maintainable, and efficient software engineering.
+                Previously, as a <strong className="text-white font-medium">Full Stack Developer Intern at QSpiders Noida</strong>, I developed responsive applications using React.js, built reusable components with Hooks and Context API, integrated RESTful APIs, and managed data persistence with MongoDB and Mongoose.
+              </p>
+              <p>
+                I have a strong foundation in JavaScript, React.js, Node.js, Express.js, and modern web technologies. I am passionate about problem-solving, continuous learning, and developing scalable software solutions.
               </p>
             </div>
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Download, Github, Linkedin, Mail, Sparkles, FileText } from 'lucide-react';
+import { ArrowRight, Download, Github, Linkedin, Mail, FileText } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 export default function Hero({ onOpenResume }) {
@@ -11,19 +11,19 @@ export default function Hero({ onOpenResume }) {
   };
 
   const techStack = [
+    'JavaScript',
     'React.js',
-    'JavaScript (ES6+)',
     'Node.js',
     'Express.js',
     'MongoDB',
-    'Tailwind CSS',
-    'REST APIs',
-    'JWT Authentication',
-    'Postman',
-    'Git',
-    'GitHub',
+    'Mongoose',
+    'RESTful APIs',
+    'CRUD Operations',
     'SQL',
-    'Context API',
+    'HTML5 & CSS3',
+    'Git & GitHub',
+    'Postman',
+    'SDLC',
   ];
 
   return (
@@ -59,7 +59,7 @@ export default function Hero({ onOpenResume }) {
             <div className="animate-fade-in">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-xs sm:text-sm text-primary font-medium">
                 <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                MERN Stack Developer
+                Junior Software Developer Intern @ Codenia Technologies
               </span>
             </div>
 
@@ -74,9 +74,9 @@ export default function Hero({ onOpenResume }) {
               </span>
             </h1>
 
-            {/* Bio Narrative */}
+            {/* Bio Narrative from New Resume */}
             <p className="text-base sm:text-lg text-muted max-w-xl leading-relaxed animate-fade-in">
-              Hi, I'm <strong className="text-white font-semibold">{personal.name}</strong> — an MCA graduate and MERN Stack Developer trained at <strong className="text-white font-semibold">QSpiders</strong>. I specialize in building responsive, scalable full-stack applications using React.js, Node.js, Express.js, MongoDB, and clean REST architectures.
+              Hi, I'm <strong className="text-white font-semibold">{personal.name}</strong> — an MCA graduate and Full Stack Developer with internship experience at <strong className="text-white font-semibold">Codenia Technologies LLP</strong> and <strong className="text-white font-semibold">QSpiders</strong>. Skilled in building responsive web applications, developing RESTful APIs, implementing CRUD operations, and database integration across JavaScript, React.js, Node.js, Express.js, and MongoDB.
             </p>
 
             {/* CTAs & Socials */}
@@ -152,21 +152,7 @@ export default function Hero({ onOpenResume }) {
                   src="/profile.jpg"
                   alt={personal.name}
                   className="w-full aspect-[4/5] object-cover rounded-2xl shadow-xl"
-                  onError={(e) => {
-                    // Fallback to nice stylized initials placeholder if image fails
-                    e.currentTarget.style.display = 'none';
-                    e.currentTarget.nextElementSibling.style.display = 'flex';
-                  }}
                 />
-                
-                {/* Fallback container in case profile image not rendered */}
-                <div className="hidden w-full aspect-[4/5] rounded-2xl bg-gradient-to-br from-[#141a1f] to-[#1a2329] flex-col items-center justify-center border border-border">
-                  <div className="w-24 h-24 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center text-primary text-3xl font-bold font-mono">
-                    EM
-                  </div>
-                  <div className="mt-4 text-white font-semibold text-lg">{personal.name}</div>
-                  <div className="text-xs text-primary font-mono mt-1">Full Stack Developer</div>
-                </div>
 
                 {/* Top-Left Floating Badge */}
                 <div className="absolute -top-4 -left-4 glass rounded-2xl px-4 py-2.5 animate-float border border-primary/20 shadow-xl">
@@ -192,7 +178,7 @@ export default function Hero({ onOpenResume }) {
         {/* Bottom Tech Marquee / Stack Pills */}
         <div className="mt-20 pt-8 border-t border-border/40">
           <p className="text-xs uppercase tracking-widest font-semibold text-muted mb-4 text-center">
-            Technologies & Frameworks
+            Technologies & Methodologies
           </p>
           <div className="flex flex-wrap items-center justify-center gap-2.5">
             {techStack.map((tech, idx) => (
