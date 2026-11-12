@@ -1,104 +1,96 @@
 import React from 'react';
-import { User, GraduationCap, MapPin, Target, Sparkles, CheckCircle2 } from 'lucide-react';
+import { Layers, Cpu, Database, Code2, Sparkles, CheckCircle2 } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 export default function About() {
   const { personal } = portfolioData;
 
-  const keyStrengths = [
-    "MERN Stack Architecture (MongoDB, Express.js, React.js, Node.js)",
-    "Modular RESTful API design with thorough Postman verification",
-    "Clean, reusable React component creation using Hooks and Context API",
-    "Database modeling & schema design using MongoDB and Mongoose",
-    "Version control workflows using Git, GitHub, branching & pull requests",
-    "Committed to continuous learning, scalable code patterns & clean design"
+  const featureCards = [
+    {
+      icon: Layers,
+      title: "MERN Stack Development",
+      description: "Building scalable full-stack web applications using React.js, Node.js, Express.js, and MongoDB."
+    },
+    {
+      icon: Cpu,
+      title: "Modern Web Technologies",
+      description: "Creating responsive, component-driven interfaces with Tailwind CSS, REST APIs, and state management."
+    },
+    {
+      icon: Database,
+      title: "Database & Data Modeling",
+      description: "Designing robust schemas with MongoDB and Mongoose ODM, alongside relational SQL foundations."
+    },
+    {
+      icon: Code2,
+      title: "Problem Solving & DSA",
+      description: "Applying Data Structures & Algorithms and structured thinking to build efficient, maintainable software."
+    }
   ];
 
   return (
-    <section id="about" className="py-20 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-28 relative overflow-hidden">
+      <div className="container mx-auto px-6 relative z-10">
         
-        {/* Section Header */}
-        <div className="flex flex-col items-center text-center mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold uppercase tracking-wider mb-3">
-            <User className="w-3.5 h-3.5" />
-            <span>About Me</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
-            Background & Engineering Philosophy
-          </h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-indigo-500 to-cyan-400 rounded-full mt-4"></div>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           
-          {/* Left Column: Summary Card */}
-          <div className="lg:col-span-7 space-y-6">
-            <div className="glass-card p-6 sm:p-8 rounded-3xl relative overflow-hidden">
-              <div className="absolute top-0 right-0 p-8 opacity-10 pointer-events-none">
-                <Sparkles className="w-32 h-32 text-indigo-400" />
-              </div>
+          {/* Left Column: Narrative & Quote */}
+          <div className="space-y-8">
+            <div className="animate-fade-in">
+              <span className="text-primary text-xs sm:text-sm font-semibold tracking-widest uppercase">
+                About Me
+              </span>
+            </div>
 
-              <h3 className="text-xl sm:text-2xl font-semibold text-white mb-4">
-                Aspiring Full Stack Engineer with strong foundation in MERN technologies.
-              </h3>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-white animate-fade-in">
+              Building scalable digital products
+              <br />
+              <span className="font-serif italic font-normal text-white">
+                with clean code and modern technology.
+              </span>
+            </h2>
 
-              <p className="text-slate-300 leading-relaxed text-sm sm:text-base">
-                {personal.summary}
+            <div className="space-y-4 text-muted text-sm sm:text-base leading-relaxed animate-fade-in">
+              <p>
+                I'm <strong className="text-white font-medium">{personal.name}</strong>, an MCA graduate from <strong className="text-white font-medium">Pranveer Singh Institute of Technology (PSIT), Kanpur</strong> and a MERN Stack Developer trained at <strong className="text-white font-medium">QSpiders Noida</strong>. I enjoy crafting full-stack web applications that are scalable, responsive, and engineered with clean architecture.
               </p>
+              <p>
+                My hands-on experience includes developing a full-stack <strong className="text-white font-medium">Task Management Application</strong> with complete CRUD functionality and RESTful API endpoints, as well as a dynamic <strong className="text-white font-medium">Food Delivery System</strong> built with React.js and modern state management.
+              </p>
+              <p>
+                I am continuously refining my skills in React, Node.js, Express.js, MongoDB, and Data Structures & Algorithms. I love solving real-world challenges through well-structured, maintainable, and efficient software engineering.
+              </p>
+            </div>
 
-              <div className="mt-6 pt-6 border-t border-slate-800">
-                <h4 className="text-sm font-semibold uppercase tracking-wider text-indigo-400 mb-3">
-                  Core Competencies:
-                </h4>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                  {keyStrengths.map((strength, index) => (
-                    <div key={index} className="flex items-start gap-2 text-xs sm:text-sm text-slate-300">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" />
-                      <span>{strength}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+            {/* Quotation Glass Card */}
+            <div className="glass rounded-2xl p-6 glow-border border border-primary/20">
+              <p className="text-sm sm:text-base font-serif italic text-white leading-relaxed">
+                "My goal is to build impactful full-stack applications that combine modern web technologies with intelligent problem-solving to create software people genuinely enjoy using."
+              </p>
             </div>
           </div>
 
-          {/* Right Column: Quick Facts Bento */}
-          <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
-            
-            <div className="glass-card p-5 rounded-2xl flex items-center gap-4">
-              <div className="h-12 w-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 shrink-0">
-                <GraduationCap className="w-6 h-6" />
-              </div>
-              <div>
-                <div className="text-xs text-slate-400 uppercase tracking-wider font-medium">Education</div>
-                <div className="text-sm font-semibold text-white mt-0.5">MCA (2024–2026)</div>
-                <div className="text-xs text-slate-400">Pranveer Singh Inst. of Tech (PSIT), Kanpur</div>
-              </div>
-            </div>
-
-            <div className="glass-card p-5 rounded-2xl flex items-center gap-4">
-              <div className="h-12 w-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 shrink-0">
-                <MapPin className="w-6 h-6" />
-              </div>
-              <div>
-                <div className="text-xs text-slate-400 uppercase tracking-wider font-medium">Location</div>
-                <div className="text-sm font-semibold text-white mt-0.5">Uttar Pradesh, India</div>
-                <div className="text-xs text-slate-400">Open to Relocation & Remote Roles</div>
-              </div>
-            </div>
-
-            <div className="glass-card p-5 rounded-2xl flex items-center gap-4">
-              <div className="h-12 w-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 shrink-0">
-                <Target className="w-6 h-6" />
-              </div>
-              <div>
-                <div className="text-xs text-slate-400 uppercase tracking-wider font-medium">Current Focus</div>
-                <div className="text-sm font-semibold text-white mt-0.5">MERN Stack Trainee</div>
-                <div className="text-xs text-slate-400">QSpiders Noida (Jun 2026 – Present)</div>
-              </div>
-            </div>
-
+          {/* Right Column: 4 Feature Grid Cards */}
+          <div className="grid sm:grid-cols-2 gap-5">
+            {featureCards.map((card, idx) => {
+              const Icon = card.icon;
+              return (
+                <div
+                  key={idx}
+                  className="glass p-6 rounded-2xl border border-primary/10 hover:border-primary/40 transition-all duration-300 hover:-translate-y-1 group"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-300 mb-4">
+                    <Icon className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-base font-semibold text-white mb-2 group-hover:text-primary transition-colors">
+                    {card.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-muted leading-relaxed">
+                    {card.description}
+                  </p>
+                </div>
+              );
+            })}
           </div>
 
         </div>

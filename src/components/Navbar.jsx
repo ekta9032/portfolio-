@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Github, Linkedin, FileText, Sparkles } from 'lucide-react';
+import { Menu, X, Github, Linkedin, Mail, FileText, ArrowRight } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 export default function Navbar({ onOpenResume }) {
@@ -15,53 +15,56 @@ export default function Navbar({ onOpenResume }) {
   }, []);
 
   const navLinks = [
+    { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
     { name: 'Skills', href: '#skills' },
-    { name: 'Experience', href: '#experience' },
     { name: 'Projects', href: '#projects' },
+    { name: 'Experience', href: '#experience' },
     { name: 'Contact', href: '#contact' },
   ];
+
+  const scrollTo = (href) => {
+    const elem = document.querySelector(href);
+    if (elem) {
+      elem.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#090d16]/90 backdrop-blur-md border-b border-slate-800/80 shadow-lg shadow-black/20 py-3'
-          : 'bg-transparent py-5'
+          ? 'bg-[#0f1418]/90 backdrop-blur-md border-b border-[#242b32] py-4 shadow-lg shadow-black/30'
+          : 'bg-transparent py-6'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-6">
         <div className="flex items-center justify-between">
-          {/* Logo / Brand */}
+          
+          {/* Logo / Name */}
           <a
-            href="#"
-            className="group flex items-center space-x-2 text-xl font-bold tracking-tight text-white"
+            href="#home"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollTo('#home');
+            }}
+            className="text-2xl font-bold tracking-tight text-white hover:text-primary transition-colors flex items-center gap-1"
           >
-            <div className="h-9 w-9 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-cyan-400 p-[1px] shadow-lg shadow-indigo-500/20 group-hover:scale-105 transition-transform">
-              <div className="h-full w-full bg-[#090d16] rounded-xl flex items-center justify-center">
-                <span className="font-mono text-sm font-black bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">
-                  EM
-                </span>
-              </div>
-            </div>
-            <div className="flex flex-col">
-              <span className="leading-tight group-hover:text-indigo-400 transition-colors">
-                {portfolioData.personal.name}
-              </span>
-              <span className="text-[11px] font-normal text-slate-400 -mt-0.5 flex items-center gap-1.5">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                Full Stack Developer
-              </span>
-            </div>
+            <span>Ekta</span>
+            <span className="text-primary text-3xl leading-none">.</span>
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-1 lg:space-x-2 bg-slate-900/60 p-1.5 rounded-full border border-slate-800/80 backdrop-blur-md">
+          <nav className="hidden md:flex items-center space-x-1 lg:space-x-2 glass px-5 py-2 rounded-full">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="px-4 py-1.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-full transition-all"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollTo(link.href);
+                }}
+                className="px-3.5 py-1 text-sm font-medium text-muted hover:text-primary transition-colors"
               >
                 {link.name}
               </a>
@@ -74,91 +77,102 @@ export default function Navbar({ onOpenResume }) {
               href={portfolioData.personal.github}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="GitHub Profile"
-              className="p-2 text-slate-400 hover:text-white hover:bg-slate-800/60 rounded-lg transition-colors border border-transparent hover:border-slate-700"
+              aria-label="GitHub"
+              className="p-2.5 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300 hover:scale-110 text-muted"
             >
-              <Github className="w-5 h-5" />
+              <Github className="w-4 h-4" />
             </a>
             <a
               href={portfolioData.personal.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="LinkedIn Profile"
-              className="p-2 text-slate-400 hover:text-white hover:bg-slate-800/60 rounded-lg transition-colors border border-transparent hover:border-slate-700"
+              aria-label="LinkedIn"
+              className="p-2.5 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300 hover:scale-110 text-muted"
             >
-              <Linkedin className="w-5 h-5" />
+              <Linkedin className="w-4 h-4" />
             </a>
             <button
               onClick={onOpenResume}
-              className="flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded-lg bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-cyan-500 text-white shadow-md shadow-indigo-600/20 hover:shadow-indigo-500/30 transition-all active:scale-95"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold glass hover:border-primary/50 text-white hover:text-primary transition-all"
             >
-              <FileText className="w-4 h-4" />
+              <FileText className="w-3.5 h-3.5 text-primary" />
               <span>Resume</span>
+            </button>
+            <button
+              onClick={() => scrollTo('#contact')}
+              className="inline-flex items-center gap-1.5 px-5 py-2 rounded-full text-xs font-semibold bg-primary hover:bg-primary-600 text-white transition-all shadow-md shadow-primary/20 hover:scale-105 active:scale-95"
+            >
+              <span>Contact Me</span>
+              <ArrowRight className="w-3.5 h-3.5" />
             </button>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile Menu Button */}
           <div className="flex md:hidden items-center space-x-2">
             <button
               onClick={onOpenResume}
-              className="p-2 text-xs font-semibold rounded-lg bg-indigo-600/30 text-indigo-300 border border-indigo-500/30"
+              className="px-3 py-1.5 text-xs font-semibold rounded-full glass text-primary border border-primary/30"
             >
               Resume
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle menu"
-              className="p-2 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition-colors"
+              className="p-2 rounded-lg text-muted hover:text-white glass"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
+
         </div>
       </div>
 
-      {/* Mobile Menu Dropdown */}
+      {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#0c1222] border-b border-slate-800 px-4 pt-3 pb-6 space-y-3">
-          <div className="flex flex-col space-y-1">
+        <div className="md:hidden glass-strong border-b border-border mt-3 px-6 py-6 space-y-4">
+          <div className="flex flex-col space-y-2">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="px-3 py-2 rounded-lg text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 transition-colors"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setMobileMenuOpen(false);
+                  scrollTo(link.href);
+                }}
+                className="px-3 py-2 text-base font-medium text-muted hover:text-primary transition-colors"
               >
                 {link.name}
               </a>
             ))}
           </div>
-          <div className="pt-3 border-t border-slate-800 flex items-center justify-between">
+          <div className="pt-4 border-t border-border flex items-center justify-between">
             <div className="flex space-x-3">
               <a
                 href={portfolioData.personal.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 text-slate-400 hover:text-white bg-slate-900 rounded-lg border border-slate-800"
+                className="p-2.5 rounded-full glass text-muted hover:text-primary"
               >
-                <Github className="w-5 h-5" />
+                <Github className="w-4 h-4" />
               </a>
               <a
                 href={portfolioData.personal.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 text-slate-400 hover:text-white bg-slate-900 rounded-lg border border-slate-800"
+                className="p-2.5 rounded-full glass text-muted hover:text-primary"
               >
-                <Linkedin className="w-5 h-5" />
+                <Linkedin className="w-4 h-4" />
               </a>
             </div>
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
-                onOpenResume();
+                scrollTo('#contact');
               }}
-              className="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg bg-indigo-600 text-white"
+              className="px-5 py-2 rounded-full text-xs font-semibold bg-primary text-white"
             >
-              <FileText className="w-4 h-4" />
-              View Resume
+              Contact Me
             </button>
           </div>
         </div>
