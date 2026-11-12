@@ -1,11 +1,11 @@
 import React from 'react';
-import { X, Printer, Download, ExternalLink, Mail, Phone, MapPin, Github, Linkedin } from 'lucide-react';
+import { X, Printer, Phone, Mail } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 export default function ResumeModal({ isOpen, onClose }) {
   if (!isOpen) return null;
 
-  const { personal, skills, experience, education, projects } = portfolioData;
+  const { personal, experience, education, projects } = portfolioData;
 
   const handlePrint = () => {
     window.print();
@@ -16,14 +16,14 @@ export default function ResumeModal({ isOpen, onClose }) {
       <div className="relative w-full max-w-4xl bg-white text-slate-900 rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[92vh]">
         
         {/* Modal Top Action Toolbar */}
-        <div className="flex items-center justify-between px-6 py-3.5 bg-slate-900 text-white border-b border-slate-800">
+        <div className="flex items-center justify-between px-6 py-3.5 bg-[#0f1418] text-white border-b border-[#242b32]">
           <div className="flex items-center gap-2">
             <span className="font-semibold text-sm">Resume Preview — {personal.name}</span>
           </div>
           <div className="flex items-center gap-2">
             <button
               onClick={handlePrint}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-indigo-600 hover:bg-indigo-500 text-white transition-colors"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium bg-[#20b2a6] hover:bg-[#178f86] text-white transition-colors"
             >
               <Printer className="w-3.5 h-3.5" />
               <span>Print / Save PDF</span>
@@ -38,15 +38,15 @@ export default function ResumeModal({ isOpen, onClose }) {
           </div>
         </div>
 
-        {/* Printable Resume Content */}
+        {/* Printable Resume Content Matching PDF */}
         <div className="overflow-y-auto p-6 sm:p-10 font-sans print:p-0 print:m-0 text-slate-800">
           
           {/* Header */}
-          <div className="text-center pb-6 border-b border-slate-300">
+          <div className="text-center pb-5 border-b border-slate-300">
             <h1 className="text-3xl font-bold tracking-tight text-slate-950 uppercase">
               {personal.name}
             </h1>
-            <p className="text-base font-semibold text-indigo-700 mt-1">
+            <p className="text-base font-semibold text-[#17726d] mt-1">
               {personal.title}
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3 text-xs text-slate-600 mt-2">
@@ -60,12 +60,12 @@ export default function ResumeModal({ isOpen, onClose }) {
                 {personal.email}
               </span>
               <span>|</span>
-              <a href={personal.github} target="_blank" rel="noopener noreferrer" className="hover:text-indigo-600 underline">
-                github.com/ekta9032
+              <a href={personal.github} target="_blank" rel="noopener noreferrer" className="hover:text-[#20b2a6] underline">
+                GitHub
               </a>
               <span>|</span>
-              <a href={personal.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-indigo-600 underline">
-                linkedin.com/in/ekta-maurya-7b039432b
+              <a href={personal.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-[#20b2a6] underline">
+                LinkedIn
               </a>
             </div>
           </div>
@@ -86,29 +86,29 @@ export default function ResumeModal({ isOpen, onClose }) {
               Technical Skills
             </h2>
             <div className="space-y-1.5 text-xs sm:text-[13px] text-slate-700">
-              <p><strong className="text-slate-900">Languages:</strong> JavaScript (ES6+), HTML5, CSS3, SQL</p>
-              <p><strong className="text-slate-900">Frontend:</strong> React.js, Responsive Web Design, Tailwind CSS, Hooks, Context API</p>
-              <p><strong className="text-slate-900">Backend:</strong> Node.js, Express.js, RESTful APIs, CRUD Operations</p>
-              <p><strong className="text-slate-900">Databases:</strong> MongoDB, Mongoose ODM, SQL</p>
+              <p><strong className="text-slate-900">Programming Language:</strong> JavaScript</p>
+              <p><strong className="text-slate-900">Frontend:</strong> React.js, HTML5, CSS3, Responsive Web Design</p>
+              <p><strong className="text-slate-900">Backend:</strong> Node.js, Express.js, RESTful APIs</p>
+              <p><strong className="text-slate-900">Databases:</strong> MongoDB, Mongoose, SQL</p>
               <p><strong className="text-slate-900">Tools:</strong> Git, GitHub, VS Code, Postman</p>
-              <p><strong className="text-slate-900">Concepts:</strong> Data Structures & Algorithms, API Integration, State Management, Component-Based Architecture</p>
+              <p><strong className="text-slate-900">Concepts:</strong> Data Structures & Algorithms, CRUD Operations, API Integration, State Management, Component-Based Architecture, SDLC</p>
             </div>
           </div>
 
           {/* Experience */}
           <div className="py-4 border-b border-slate-200">
             <h2 className="text-sm font-bold text-slate-950 uppercase tracking-wider mb-3">
-              Experience
+              Professional Experience
             </h2>
             {experience.map((exp, idx) => (
-              <div key={idx} className="mb-3">
+              <div key={idx} className="mb-4">
                 <div className="flex justify-between items-baseline">
                   <h3 className="text-sm font-bold text-slate-900">
-                    {exp.company}, <span className="font-normal text-slate-600">{exp.location}</span>
+                    {exp.company}{exp.location ? `, ${exp.location}` : ''}
                   </h3>
                   <span className="text-xs text-slate-600 font-mono">{exp.period}</span>
                 </div>
-                <div className="text-xs font-semibold text-indigo-700 mb-1.5">{exp.role}</div>
+                <div className="text-xs font-semibold text-[#17726d] mb-1.5 italic">{exp.role}</div>
                 <ul className="list-disc list-outside ml-4 space-y-1 text-xs text-slate-700">
                   {exp.highlights.map((h, hIdx) => (
                     <li key={hIdx}>{h}</li>
@@ -128,12 +128,12 @@ export default function ResumeModal({ isOpen, onClose }) {
                 <div key={proj.id}>
                   <div className="flex justify-between items-baseline">
                     <h3 className="text-sm font-bold text-slate-900">{proj.title}</h3>
-                    <a href={proj.githubUrl} target="_blank" rel="noopener noreferrer" className="text-xs text-indigo-700 hover:underline">
+                    <a href={proj.githubUrl} target="_blank" rel="noopener noreferrer" className="text-xs text-[#17726d] hover:underline font-medium">
                       GitHub
                     </a>
                   </div>
                   <div className="text-xs text-slate-600 italic mb-1.5">
-                    <strong>Tech Stack:</strong> {proj.techStack.join(', ')}
+                    {proj.techStack.join(', ')}
                   </div>
                   <ul className="list-disc list-outside ml-4 space-y-1 text-xs text-slate-700">
                     {proj.achievements.map((ach, aIdx) => (

@@ -10,13 +10,13 @@ export const portfolioData = {
     github: "https://github.com/ekta9032",
     githubUsername: "ekta9032",
     linkedin: "https://linkedin.com/in/ekta-maurya-7b039432b",
-    status: "Available for Full-time Roles & Internships",
-    summary: `MCA graduate and aspiring Full Stack Developer with hands-on experience in MERN Stack development (MongoDB, Express.js, React.js, Node.js). Skilled in building responsive web applications, RESTful APIs, CRUD operations, and database integration. Strong foundation in JavaScript, React.js, and modern web technologies with a passion for problem-solving, continuous learning, and developing scalable software solutions.`
+    status: "Junior Software Developer Intern @ Codenia Technologies",
+    summary: `MCA graduate and Full Stack Developer with internship experience in software development and MERN Stack technologies. Skilled in building responsive web applications, developing RESTful APIs, implementing CRUD operations, and database integration. Strong foundation in JavaScript, React.js, Node.js, Express.js, and modern web technologies. Passionate about problem-solving, continuous learning, and developing scalable software solutions.`
   },
 
   skills: {
     languages: [
-      { name: "JavaScript (ES6+)", level: 90, highlight: "Primary Language" },
+      { name: "JavaScript (ES6+)", level: 92, highlight: "Primary Language" },
       { name: "HTML5", level: 95 },
       { name: "CSS3", level: 90 },
       { name: "SQL", level: 75 }
@@ -30,11 +30,11 @@ export const portfolioData = {
       { name: "Component-Based Architecture", level: 92 }
     ],
     backend: [
-      { name: "Node.js", level: 85, highlight: "Backend Runtime" },
+      { name: "Node.js", level: 88, highlight: "Backend Runtime" },
       { name: "Express.js", level: 88, highlight: "REST APIs" },
       { name: "RESTful API Design", level: 90 },
       { name: "CRUD Operations", level: 95 },
-      { name: "API Integration & Testing", level: 88 }
+      { name: "API Integration & Testing", level: 90 }
     ],
     database: [
       { name: "MongoDB", level: 88, highlight: "NoSQL DB" },
@@ -45,58 +45,72 @@ export const portfolioData = {
     tools: [
       { name: "Git & GitHub", highlight: "Version Control" },
       { name: "Postman", highlight: "API Testing" },
-      { name: "VS Code", highlight: "Editor" },
+      { name: "VS Code", highlight: "Primary Editor" },
       { name: "Vercel & Vite", highlight: "Deployment & Build" }
     ],
     concepts: [
       "Data Structures & Algorithms",
       "CRUD Operations",
-      "Frontend-Backend Communication",
+      "API Integration",
       "State Management",
-      "Component Lifecycle",
-      "Responsive UI/UX Patterns"
+      "Component-Based Architecture",
+      "SDLC (Software Development Life Cycle)",
+      "Frontend-Backend Communication"
     ]
   },
 
   experience: [
     {
-      role: "MERN Stack Developer Trainee",
-      company: "QSpiders",
-      location: "Noida, Uttar Pradesh",
-      period: "Jun 2026 – Present",
-      type: "Training / Internship",
+      role: "Junior Software Developer Intern",
+      company: "Codenia Technologies LLP",
+      location: "India",
+      period: "Sep 2026 – Present",
+      type: "Internship",
       badge: "Current Role",
       highlights: [
-        "Receiving extensive hands-on training in MongoDB, Express.js, React.js, and Node.js for full-stack web development.",
-        "Developing responsive client-side applications using React.js, JavaScript (ES6+), HTML5, and CSS3.",
-        "Building reusable React components utilizing Hooks (useState, useEffect, useMemo), React Router, and Context API.",
-        "Designing and integrating secure RESTful APIs for seamless frontend-to-backend communication.",
-        "Designing schemas and handling data queries using MongoDB and Mongoose ODM.",
-        "Practicing collaborative software workflows with Git, GitHub branching, and code reviews."
-      ]
+        "Contributing to software development and application development activities.",
+        "Applying programming concepts and modern web technologies to development tasks.",
+        "Collaborating on development tasks and strengthening technical problem-solving skills."
+      ],
+      technologies: ["React.js", "JavaScript", "Web Technologies", "Problem Solving"]
+    },
+    {
+      role: "Full Stack Developer Intern",
+      company: "QSpiders",
+      location: "Noida, Uttar Pradesh",
+      period: "Jun 2026 – Sep 2026",
+      type: "Internship",
+      badge: "Completed",
+      highlights: [
+        "Gained hands-on experience in MERN Stack development using MongoDB, Express.js, React.js, and Node.js.",
+        "Developed responsive web applications using React.js, JavaScript, HTML5, and CSS3.",
+        "Built reusable React components using Hooks, React Router, and Context API.",
+        "Developed and integrated RESTful APIs for frontend-backend communication.",
+        "Worked with MongoDB and Mongoose for database management and used Git/GitHub for version control."
+      ],
+      technologies: ["MongoDB", "Express.js", "React.js", "Node.js", "Mongoose", "Git"]
     }
   ],
 
   education: [
     {
       degree: "Master of Computer Applications (MCA)",
-      institution: "Pranveer Singh Institute of Technology (PSIT)",
+      institution: "Pranveer Singh Institute of Technology, Kanpur",
       location: "Kanpur, Uttar Pradesh",
       period: "2024 – 2026",
       status: "Pursuing / Graduating",
       highlights: [
-        "Advanced study in Software Engineering, Web Technologies, Database Systems, and Algorithms.",
-        "Active involvement in technical projects, MERN stack development, and full-stack problem solving."
+        "Advanced study in Software Engineering, Web Technologies, Database Systems, and Algorithms."
       ]
     },
     {
       degree: "Bachelor of Science (B.Sc.)",
-      institution: "Microtek College of Management and Technology",
+      institution: "Microtek College of Management and Technology, Varanasi",
       location: "Varanasi, Uttar Pradesh",
       period: "2020 – 2023",
       status: "Completed",
       highlights: [
-        "Built solid foundations in computing principles, mathematical analysis, and logical reasoning."
+        "Solid foundations in computing fundamentals, mathematical analysis, and logical reasoning."
       ]
     }
   ],
@@ -107,13 +121,13 @@ export const portfolioData = {
       title: "Todo List – MERN Task Management Application",
       category: "Full Stack (MERN)",
       featured: true,
-      description: "A robust full-stack task management application with complete CRUD functionality, custom RESTful endpoints, and efficient MongoDB persistence.",
+      description: "Developed a full-stack task management application with complete CRUD functionality, RESTful endpoints, and efficient data persistence.",
       techStack: ["MongoDB", "Express.js", "React.js", "Node.js", "Mongoose", "REST APIs"],
       achievements: [
-        "Developed full-stack architecture implementing complete Create, Read, Update, and Delete (CRUD) operations.",
-        "Built modular RESTful APIs using Node.js and Express.js for task creation, status toggling, and filtering.",
-        "Integrated MongoDB and Mongoose ODM for efficient schema validation and database persistence.",
-        "Engineered a responsive React.js frontend using Hooks, reusable UI components, and dynamic state updates."
+        "Developed a full-stack task management application with complete CRUD functionality.",
+        "Built RESTful APIs using Node.js and Express.js for task creation, updating, and deletion.",
+        "Integrated MongoDB and Mongoose for efficient data storage and persistence.",
+        "Created a responsive React.js frontend using Hooks, reusable components, and API integration."
       ],
       githubUrl: "https://github.com/ekta9032",
       demoUrl: "https://github.com/ekta9032"
@@ -123,13 +137,13 @@ export const portfolioData = {
       title: "Food Delivery System – React Web Application",
       category: "Frontend Application",
       featured: true,
-      description: "A high-performance food delivery web application built with a modern UI design, dynamic menu filtering, and mobile-first responsiveness.",
+      description: "Developed a responsive food delivery application with modern user interface design, dynamic menu rendering, and component-based architecture.",
       techStack: ["React.js", "JavaScript", "HTML5", "CSS3", "Context API", "Responsive Design"],
       achievements: [
-        "Developed a responsive food ordering interface featuring modern UI/UX design patterns.",
-        "Implemented dynamic menu filtering by category and pricing with reusable React component blocks.",
-        "Applied component-based architecture ensuring maintainable, modular, and easily extendable code.",
-        "Optimized responsiveness and touch interactions across mobile, tablet, and desktop viewports."
+        "Developed a responsive food delivery application with a modern user interface.",
+        "Implemented reusable React components and dynamic menu rendering.",
+        "Applied component-based architecture for maintainable and scalable code.",
+        "Optimized responsiveness across desktop, tablet, and mobile devices."
       ],
       githubUrl: "https://github.com/ekta9032",
       demoUrl: "https://github.com/ekta9032"
