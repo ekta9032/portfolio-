@@ -24,7 +24,7 @@ export default function Experience() {
             Professional <span className="font-serif italic font-normal text-white">Experience</span>
           </h2>
           <p className="text-muted text-sm sm:text-base mt-4 leading-relaxed">
-            Internship experience in software development and full-stack MERN technologies, combined with MCA education.
+            Experience in software development and full-stack MERN technologies, combined with MCA education.
           </p>
         </div>
 

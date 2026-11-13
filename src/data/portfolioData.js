@@ -10,8 +10,8 @@ export const portfolioData = {
     github: "https://github.com/ekta9032",
     githubUsername: "ekta9032",
     linkedin: "https://linkedin.com/in/ekta-maurya-7b039432b",
-    status: "Junior Software Developer Intern @ Codenia Technologies",
-    summary: `MCA graduate and Full Stack Developer with internship experience in software development and MERN Stack technologies. Skilled in building responsive web applications, developing RESTful APIs, implementing CRUD operations, and database integration. Strong foundation in JavaScript, React.js, Node.js, Express.js, and modern web technologies. Passionate about problem-solving, continuous learning, and developing scalable software solutions.`
+    status: "Junior Software Developer @ Codenia Technologies",
+    summary: `MCA graduate and Full Stack Developer with experience in software development and MERN Stack technologies. Skilled in building responsive web applications, developing RESTful APIs, implementing CRUD operations, and database integration. Strong foundation in JavaScript, React.js, Node.js, Express.js, and modern web technologies. Passionate about problem-solving, continuous learning, and developing scalable software solutions.`
   },
 
   skills: {
@@ -61,11 +61,11 @@ export const portfolioData = {
 
   experience: [
     {
-      role: "Junior Software Developer Intern",
+      role: "Junior Software Developer",
       company: "Codenia Technologies LLP",
-      location: "India",
+      location: "Noida, Uttar Pradesh",
       period: "Sep 2026 – Present",
-      type: "Internship",
+      type: "Full-time",
       badge: "Current Role",
       highlights: [
         "Contributing to software development and application development activities.",

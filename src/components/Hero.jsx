@@ -59,7 +59,7 @@ export default function Hero({ onOpenResume }) {
             <div className="animate-fade-in">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-xs sm:text-sm text-primary font-medium">
                 <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                Junior Software Developer Intern @ Codenia Technologies
+                Junior Software Developer @ Codenia Technologies
               </span>
             </div>
 
@@ -76,7 +76,7 @@ export default function Hero({ onOpenResume }) {
 
             {/* Bio Narrative from New Resume */}
             <p className="text-base sm:text-lg text-muted max-w-xl leading-relaxed animate-fade-in">
-              Hi, I'm <strong className="text-white font-semibold">{personal.name}</strong> — an MCA graduate and Full Stack Developer with internship experience at <strong className="text-white font-semibold">Codenia Technologies LLP</strong> and <strong className="text-white font-semibold">QSpiders</strong>. Skilled in building responsive web applications, developing RESTful APIs, implementing CRUD operations, and database integration across JavaScript, React.js, Node.js, Express.js, and MongoDB.
+              Hi, I'm <strong className="text-white font-semibold">{personal.name}</strong> — an MCA graduate and Full Stack Developer with experience at <strong className="text-white font-semibold">Codenia Technologies LLP</strong> and <strong className="text-white font-semibold">QSpiders</strong>. Skilled in building responsive web applications, developing RESTful APIs, implementing CRUD operations, and database integration across JavaScript, React.js, Node.js, Express.js, and MongoDB.
             </p>
 
             {/* CTAs & Socials */}

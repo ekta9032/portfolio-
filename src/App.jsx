@@ -25,6 +25,7 @@ export default function App() {
         <Experience />
         <Projects />
         <Contact />
+        
       </main>
 
       {/* Footer */}

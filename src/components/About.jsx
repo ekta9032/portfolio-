@@ -52,10 +52,10 @@ export default function About() {
 
             <div className="space-y-4 text-muted text-sm sm:text-base leading-relaxed animate-fade-in">
               <p>
-                I'm <strong className="text-white font-medium">{personal.name}</strong>, an MCA graduate from <strong className="text-white font-medium">Pranveer Singh Institute of Technology (PSIT), Kanpur</strong> and a Full Stack Developer with internship experience in software development and MERN Stack technologies.
+                I'm <strong className="text-white font-medium">{personal.name}</strong>, an MCA graduate from <strong className="text-white font-medium">Pranveer Singh Institute of Technology (PSIT), Kanpur</strong> and a Full Stack Developer with experience in software development and MERN Stack technologies.
               </p>
               <p>
-                Currently, I am a <strong className="text-white font-medium">Junior Software Developer Intern at Codenia Technologies LLP</strong>, where I contribute to software and application development activities, apply modern programming concepts, and collaborate on development tasks to solve technical problems.
+                Currently, I am a <strong className="text-white font-medium">Junior Software Developer at Codenia Technologies LLP</strong>, where I contribute to software and application development activities, apply modern programming concepts, and collaborate on development tasks to solve technical problems.
               </p>
               <p>
                 Previously, as a <strong className="text-white font-medium">Full Stack Developer Intern at QSpiders Noida</strong>, I developed responsive applications using React.js, built reusable components with Hooks and Context API, integrated RESTful APIs, and managed data persistence with MongoDB and Mongoose.
